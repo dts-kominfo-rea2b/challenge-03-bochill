@@ -21,10 +21,23 @@ const dataBelanjaan = [
 ];
 
 // boleh dimodifikasi bila ingin menggunakan deklarasi fungsi yang normal
-const listBelanjaan = null;
+  const listBelanjaan = function(daftarItem){
+      return daftarItem.map(function(data){
+          return "'- "+ data.nama + " x " + data.kuantitas;
+      });
+  };
 
-// boleh dimodifikasi bila ingin menggunakan deklarasi fungsi yang normal
-const totalBelanjaan = null;
+  // versi arrow
+  // const listBelanjaan = (daftarItem) => daftarItem.map((data) => "'- " + data.nama + " x " + data.kuantitas);
+  
+  // boleh dimodifikasi bila ingin menggunakan deklarasi fungsi yang normal
+  const totalBelanjaan = function(daftarItem){
+      let totalHarga = 0;
+      daftarItem.forEach(data){
+          totalHarga += data.harga * data.kuantitas;
+      }
+      return totalHarga;
+  };
 
 // ! JANGAN DIMODIFIKASI
 const main = () => {
