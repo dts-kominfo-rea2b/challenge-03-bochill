@@ -28,11 +28,11 @@ const dataBelanjaan = [
   }; 
   
   // boleh dimodifikasi bila ingin menggunakan deklarasi fungsi yang normal
-  const totalBelanjaan = function(daftarItem2){
+  const totalBelanjaan = function(daftarItem){
       let totalHarga = 0;
-      daftarItem2.forEach(data2){
-          totalHarga += data2.harga * data2.kuantitas;
-      };
+      daftarItem.forEach(function(data){
+          totalHarga += data.harga * data.kuantitas;
+      });
       return totalHarga;
   };
 
